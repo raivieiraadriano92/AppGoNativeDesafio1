@@ -10,7 +10,9 @@ export default class Post extends Component<Props> {
   render() {
     return (
       <View style={styles.post}>
-        <Text>asdasda</Text>
+        <Text style={styles.title}>{this.props.title}</Text>
+        <Text style={styles.author}>{this.props.author}</Text>
+        <Text style={styles.text}>{this.props.text}</Text>
       </View>
     );
   }
@@ -19,10 +21,20 @@ export default class Post extends Component<Props> {
 const styles = StyleSheet.create({
   post: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#FFF',
     padding: 20,
+    marginHorizontal: 20,
     marginBottom: 20,
+    borderRadius: 5
+  },
+  title: {
+    color: '#333',
+    fontWeight: 'bold',
+  },
+  author: {
+    color: '#999',
+  },
+  text: {
+    color: '#666',
   },
 });

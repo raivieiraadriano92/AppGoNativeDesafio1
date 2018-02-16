@@ -18,15 +18,13 @@ export default class Header extends Component<Props> {
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFF',
     padding: 20,
-    marginBottom: 20,
   },
   headerTitle: {
-    color: '#333333',
+    color: '#333',
     fontWeight: 'bold',
   },
 });

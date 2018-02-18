@@ -1,22 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-type Props = {};
-export default class Post extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.post}>
-        <Text style={styles.title}>{this.props.title}</Text>
-        <Text style={styles.author}>{this.props.author}</Text>
-        <Text style={styles.text}>{this.props.text}</Text>
-      </View>
-    );
-  }
-}
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   post: {
@@ -38,3 +27,19 @@ const styles = StyleSheet.create({
     color: '#666',
   },
 });
+
+const Post = props => (
+  <View style={styles.post}>
+    <Text style={styles.title}>{props.title}</Text>
+    <Text style={styles.author}>{props.author}</Text>
+    <Text style={styles.text}>{props.text}</Text>
+  </View>
+);
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+export default Post;

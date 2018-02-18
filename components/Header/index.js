@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-type Props = {};
-export default class Header extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>{this.props.title}</Text>
-      </View>
-    );
-  }
-}
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   header: {
@@ -28,3 +19,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+const Header = props => (
+  <View style={styles.header}>
+    <Text style={styles.headerTitle}>{props.title}</Text>
+  </View>
+);
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+export default Header;

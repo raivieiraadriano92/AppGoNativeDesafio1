@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 
 import Header from './components/Header';
 import Post from './components/Post';
 
-type Props = {};
-export default class App extends Component<Props> {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // flexDirection: 'row',
+    // justifyContent: 'flex-start',
+    // alignItems: 'center',
+    backgroundColor: '#EE7777',
+  },
+  posts: {
+    paddingTop: 20,
+  },
+});
+
+export default class App extends Component {
   state = {
     posts: [
       {
@@ -63,20 +74,12 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Header title="GoNative App" />
 
-        <ScrollView style={{ paddingTop: 20, }}>
-          { this.state.posts.map(post => <Post key={post.id} title={post.title} author={post.author} text={post.text} />) }
+        <ScrollView style={styles.posts}>
+          {this.state.posts.map(post => (
+            <Post key={post.id} title={post.title} author={post.author} text={post.text} />
+          ))}
         </ScrollView>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // flexDirection: 'row',
-    // justifyContent: 'flex-start',
-    // alignItems: 'center',
-    backgroundColor: '#EE7777',
-  },
-});

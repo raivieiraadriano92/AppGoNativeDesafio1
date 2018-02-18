@@ -5,6 +5,9 @@ import {
   ScrollView,
 } from 'react-native';
 
+import './config/ReactotronConfig';
+import './config/DevToolsConfig';
+
 import Header from './components/Header';
 import Post from './components/Post';
 
@@ -26,7 +29,7 @@ export default class App extends Component {
     posts: [
       {
         id: 1,
-        title: 'title',
+        title: 'title--',
         author: 'author',
         text: 'text',
       },
